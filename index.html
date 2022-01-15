@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>iphone cases</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.reflowhq.com/v1/toolkit.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="header-blue">
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+            <div class="container-fluid"><a class="navbar-brand" href="#">Personal phone cases</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-2">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Pay</a></li>
+                       
+                    </ul>
+                    <form class="d-flex me-auto navbar-form" target="_self">
+                       
+                        <!--
+                    </form><span class="navbar-text"> <a class="login" href="#">Log In</a></span><a class="btn btn-light action-button" role="button" href="#">Sign Up</a>
+                -->
+                </div>
+            </div>
+        </nav>
+        <div class="container hero">
+            <div class="row">
+                <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                    <h1>Pay securely via cashapp or PayPal/Venmo</h1><button class="btn btn-light btn-lg action-button" type="button">Learn More</button>
+                </div>
+                <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+                    <div class="phone-mockup"><img class="device" src="https://cdn.thewirecutter.com/wp-content/media/2021/09/iphone13cases-2048px-9994-3x2-1.jpg?auto=webp&quality=60&crop=1.91:1&width=1200">
+                        <div class="screen"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<!--Ecommerce -->
+
+<div class="container mt-5">
+<div class="row">
+<div class="card" style="width:400px">
+  <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MX022?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1590872474000" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Hot pink</h4>
+    <p class="card-text">$35</p>
+    <a href="#" class="btn btn-success">Buy</a>
+    <!-- paypal button-->
+<div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"Hot pink Iphone case","amount":{"currency_code":"USD","value":35}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+
+    <!-- end paypal button -->
+  </div>
+</div>
+</div>
+</div> 
+
+<!-- Second product -->
+
+<div class="container mt-5">
+<div class="row">
+<div class="card" style="width:400px">
+  <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWYD2?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1566853265052" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Leather</h4>
+    <p class="card-text">$45</p>
+    <a href="#" class="btn btn-success">Buy</a>
+  </div>
+</div>
+</div>
+</div> 
+
+
+
+
+<!-- footer -->
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Ecommerce website</span>
+  </div>
+</footer>
+
+
+    <div data-reflow-type="product"></div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.reflowhq.com/v1/toolkit.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+</body>
+
+</html>
